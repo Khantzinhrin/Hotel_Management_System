@@ -53,7 +53,7 @@ public class LogInController {
             try {
                //DataBase Connection
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management_system", "root", "");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "name", "your_password");
 
                 // Retrieve user input from the text fields
                 String user_id = UserID.getText();
