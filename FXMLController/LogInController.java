@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -48,50 +47,59 @@ public class LogInController {
     @FXML
     private Text passwordError;
     
-    
+    private String userIdInput;
+
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/hotel_management_system";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
 
-    
     @FXML
     void LogInAction(ActionEvent event) {
-        String userIdInput = UserID.getText();
-        String passwordInput = Password.isVisible() ? Password.getText() : PasswordTextFiled.getText(); // Handle both password field
+        userIdInput = UserID.getText();
+        String passwordInput = Password.isVisible() ? Password.getText() : PasswordTextFiled.getText();
         String sql = "SELECT * FROM admin_and_staff WHERE user_id = ? AND user_password = ?";
 
         try {
             Connection con = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userIdInput);
-            pstmt.setString(2, passwordInput); // Correctly set the password once
+            pstmt.setString(2, passwordInput); 
 
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                String role = rs.getString("role");  // Fetch the role from the database
+                String role = rs.getString("role");
 
-                // Navigate based on the role
+                FXMLLoader loader = new FXMLLoader();
+
                 if ("staff".equalsIgnoreCase(role)) {
-                    // Load Staff Page
-                    Parent staffPage = FXMLLoader.load(getClass().getResource("StaffPage.fxml"));
+                    // Load Staff Page and set user ID in StaffPageController
+                    loader.setLocation(getClass().getResource("StaffPage.fxml"));
+                    Parent staffPage = loader.load();
+                    
+                    // Pass userId to the StaffPageController
+                    StaffPageController staffController = loader.getController();
+                    staffController.setUserId(userIdInput);  // Set the userId in StaffPageController
+
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(staffPage);
                     stage.setScene(scene);
                     stage.setTitle("Staff Page");
                     stage.show();
-                	Image logo = new Image(getClass().getResourceAsStream("/Icon/logo1.png"));
-                	stage.getIcons().add(logo);
+                    Image logo = new Image(getClass().getResourceAsStream("/Icon/logo1.png"));
+                    stage.getIcons().add(logo);
                 } else if ("admin".equalsIgnoreCase(role)) {
                     // Load Admin Page
-                    Parent adminPage = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
+                    loader.setLocation(getClass().getResource("AdminPage.fxml"));
+                    Parent adminPage = loader.load();
+
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(adminPage);
                     stage.setScene(scene);
                     stage.setTitle("Admin Page");
                     stage.show();
                     Image logo = new Image(getClass().getResourceAsStream("/Icon/logo1.png"));
-                	stage.getIcons().add(logo);
+                    stage.getIcons().add(logo);
                 } else {
                     // Handle any other roles or unexpected values
                     System.out.println("Unexpected role found: " + role);
@@ -101,6 +109,7 @@ public class LogInController {
                 userError.setVisible(true);
                 passwordError.setVisible(true);
             }
+
             rs.close();
             pstmt.close();
             con.close();
@@ -109,6 +118,7 @@ public class LogInController {
             e.printStackTrace();
         }
     }
+
     @FXML
     void ResetAction(ActionEvent event) {
         if (event.getSource() == Reset) {
@@ -117,6 +127,7 @@ public class LogInController {
             PasswordTextFiled.setText("");
         }
     }
+
     @FXML
     void ShowPasswordAction(ActionEvent event) {
         if (showPassword.isSelected()) {
