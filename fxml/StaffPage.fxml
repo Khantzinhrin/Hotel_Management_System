@@ -400,7 +400,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="55.0" layoutY="491.0" text="Version: 0.1 model beginning" textFill="WHITE">
+                  <Label layoutX="55.0" layoutY="490.0" text="Version: 0.1 model beginning" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -410,17 +410,22 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="56.0" layoutY="535.0" text="Name : Hotel_Management_System " textFill="WHITE">
+                  <Label layoutX="55.0" layoutY="535.0" text="Name : Hotel_Management_System " textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="54.0" layoutY="580.0" text="Developed Date:12.9.2024" textFill="WHITE">
+                  <Label layoutX="55.0" layoutY="580.0" text="Developed Date:12.9.2024" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
                   <Button layoutX="421.0" layoutY="367.0" mnemonicParsing="false" onAction="#change_name_pass_Action" style="-fx-background-color: black;" text="Save" textFill="WHITE" />
+                  <Label layoutX="55.0" layoutY="625.0" text="New Update-Not Coming Yet" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
             <AnchorPane fx:id="OrderUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;" visible="false">
                <children>
