@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1161.0" style="-fx-background-color: #34495E;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StaffPageController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="739.0" prefWidth="180.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/hotel_6879671.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Roombtn" mnemonicParsing="false" onAction="#RoomDetailShow" prefHeight="62.0" prefWidth="124.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Room Details" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Bookingbtn" layoutX="38.0" layoutY="160.0" mnemonicParsing="false" onAction="#BookingShow" prefHeight="62.0" prefWidth="124.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Booking Details" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Servicebtn" layoutX="38.0" layoutY="223.0" mnemonicParsing="false" onAction="#ServicesShow" prefHeight="62.0" prefWidth="124.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Services" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Settingbtn" layoutX="38.0" layoutY="285.0" mnemonicParsing="false" onAction="#SettingShow" prefHeight="62.0" prefWidth="124.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Setting" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="LogOutbtn" layoutX="38.0" layoutY="408.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="62.0" prefWidth="124.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="LogOut" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="180.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="RoomDetailsUI" layoutX="180.0" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;">
+         <children>
+            <AnchorPane fx:id="RoomDetailsUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;">
+               <children>
+                  <BorderPane prefHeight="739.0" prefWidth="986.0">
+                     <top>
+                        <AnchorPane prefHeight="88.0" prefWidth="986.0" style="-fx-background-color: #283747;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fx:id="ProfilePicture" fitHeight="93.0" fitWidth="68.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icon/user_9650218.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="StaffName" fill="WHITE" fontSmoothingType="LCD" layoutX="100.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="SearchBar" layoutX="748.0" layoutY="25.0" onAction="#SearchAction" prefHeight="43.0" prefWidth="206.0" promptText="Search" style="-fx-background-radius: 10; -fx-background-color: white;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="903.0" layoutY="25.0" prefHeight="43.0" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: white;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="30.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icon/search_16765564.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <bottom>
+                        <HBox alignment="CENTER" prefHeight="115.0" prefWidth="1002.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="Floor1" mnemonicParsing="false" onAction="#FloorAction" prefHeight="60.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Floor 1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="Floor2" layoutX="444.0" layoutY="32.0" mnemonicParsing="false" onAction="#FloorAction" prefHeight="60.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Floor 2">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="Floor3" layoutX="376.0" layoutY="32.0" mnemonicParsing="false" onAction="#FloorAction" prefHeight="60.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Floor 3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="Floor4" layoutX="308.0" layoutY="32.0" mnemonicParsing="false" onAction="#FloorAction" prefHeight="60.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Floor 4">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="All" layoutX="679.0" layoutY="38.0" mnemonicParsing="false" onAction="#FloorAction" prefHeight="60.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="All">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <AnchorPane prefHeight="94.0" prefWidth="71.0">
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <CheckBox fx:id="singleRoomCheckBox" layoutX="-1.0" layoutY="5.0" mnemonicParsing="false" text="Single" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </CheckBox>
+                                    <CheckBox fx:id="doubleRoomCheckBox" layoutX="-1.0" layoutY="61.0" mnemonicParsing="false" text="Double" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </CheckBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ScrollPane fx:id="FloorScene" layoutX="525.0" layoutY="18.0" prefHeight="500.0" prefWidth="450.0">
+                                <content>
+                                  <AnchorPane fx:id="RoomBody" minHeight="0.0" minWidth="0.0" />
+                                </content>
+                              </ScrollPane>
+                              <AnchorPane fx:id="InputUI" layoutX="21.0" layoutY="5.0" prefHeight="500.0" prefWidth="479.0" style="-fx-background-color: white; -fx-background-radius: 10;" visible="false">
+                                 <children>
+                                    <Text layoutX="8.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer's Details Input">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fitHeight="38.0" fitWidth="44.0" layoutX="267.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icon/form_10075307.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="74.0" layoutY="89.0" text="First Name">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="258.0" layoutY="89.0" text="Last Name">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="74.0" layoutY="170.0" text="ID/NRC">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="74.0" layoutY="255.0" text="Phone Number">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="258.0" layoutY="255.0" text="Email">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="74.0" layoutY="345.0" text="Check In Date">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="258.0" layoutY="345.0" text="Check Out Date">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="FirstName" layoutX="74.0" layoutY="122.0" prefHeight="26.0" prefWidth="124.0" promptText="First Name" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 7;" />
+                                    <TextField fx:id="LastName" layoutX="250.0" layoutY="121.0" prefHeight="26.0" prefWidth="124.0" promptText="Last Name" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 7;" />
+                                    <TextField fx:id="NrcOrId" layoutX="74.0" layoutY="205.0" prefHeight="27.0" prefWidth="302.0" promptText="--/--" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 7;" />
+                                    <TextField fx:id="phoneNumber" layoutX="74.0" layoutY="295.0" prefHeight="26.0" prefWidth="124.0" promptText="+959-..............." style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 7;" />
+                                    <TextField fx:id="Email" layoutX="250.0" layoutY="295.0" prefHeight="26.0" prefWidth="124.0" promptText=".......@gmail.com" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 7;" />
+                                    <DatePicker fx:id="CheckInDate" layoutX="75.0" layoutY="387.0" prefHeight="26.0" prefWidth="124.0" promptText="Check In" style="-fx-background-color: white; -fx-border-color: #000111; -fx-border-radius: 5;" />
+                                    <DatePicker fx:id="CheckOutDate" layoutX="257.0" layoutY="387.0" prefHeight="26.0" prefWidth="124.0" promptText="Check Out" style="-fx-background-color: white; -fx-border-color: #000111; -fx-border-radius: 5;" />
+                                    <Button fx:id="Cancelbtn" layoutX="79.0" layoutY="448.0" mnemonicParsing="false" onAction="#CancelAction" style="-fx-background-color: red; -fx-border-color: red; -fx-border-radius: 7; -fx-background-radius: 7;" text="Cancel" textFill="WHITE" />
+                                    <Button fx:id="Orderbtn" layoutX="194.0" layoutY="448.0" mnemonicParsing="false" style="-fx-background-color: yellow; -fx-border-color: yellow; -fx-background-radius: 7; -fx-border-radius: 7;" text="Booking" />
+                                    <Button fx:id="Submitbtn" layoutX="325.0" layoutY="448.0" mnemonicParsing="false" onAction="#SubmitAction" style="-fx-background-color: green; -fx-border-color: green; -fx-background-radius: 7; -fx-border-radius: 7;" text="Submit" textFill="WHITE" />
+                                 </children></AnchorPane>
+                              <AnchorPane fx:id="ShowDetails" layoutX="83.0" layoutY="20.0" prefHeight="238.0" prefWidth="372.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer's Details">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                                    <Text layoutX="13.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+                                    <Text layoutX="227.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                                    <Text layoutX="13.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check In Date" />
+                                    <Text layoutX="227.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Out Date" />
+                                    <Text fx:id="Name" layoutX="13.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="PhoneNo" layoutX="13.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="EmailText" layoutX="227.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="CkinDate" layoutX="13.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="CkoutDate" layoutX="227.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Line endX="-51.4000244140625" layoutX="107.0" layoutY="74.0" startX="-95.0" />
+                                    <Line endX="-5.79998779296875" layoutX="107.0" layoutY="130.0" startX="-95.0" />
+                                    <Line endX="-12.79998779296875" layoutX="107.0" layoutY="185.0" startX="-95.0" />
+                                    <Line endX="-12.79998779296875" layoutX="328.0" layoutY="185.0" startX="-102.4000244140625" />
+                                    <Line endX="-61.79998779296875" layoutX="328.0" layoutY="130.0" startX="-102.4000244140625" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="RoomDetails" layoutX="83.0" layoutY="282.0" prefHeight="235.0" prefWidth="372.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Details">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" />
+                                    <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room ID" />
+                                    <Text layoutX="180.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Floor" />
+                                    <Text layoutX="14.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Per Night" />
+                                    <Text fx:id="roomType" layoutX="16.0" layoutY="151.5" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="roomID" layoutX="16.0" layoutY="92.5" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="Floor" layoutX="180.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text fx:id="price" layoutX="16.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Line endX="-39.712890625" layoutX="114.0" layoutY="126.0" startX="-100.0" />
+                                    <Line endX="-53.529296875" endY="-3.0517578125E-5" layoutX="114.0" layoutY="67.0" startX="-100.0" />
+                                    <Line endX="-70.0" endY="-3.0517578125E-5" layoutX="279.0" layoutY="125.0" startX="-100.0" />
+                                    <Line endX="-19.833984375" layoutX="113.0" layoutY="185.0" startX="-100.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+            <AnchorPane fx:id="ServicesUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;" visible="false">
+               <children>
+                  <TabPane prefHeight="739.0" prefWidth="986.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Food Service">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane prefHeight="711.0" prefWidth="986.0">
+                                       <top>
+                                          <AnchorPane prefHeight="106.0" prefWidth="986.0" style="-fx-background-color: #283747;" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Text fill="WHITE" fontSmoothingType="LCD" layoutX="20.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Categories">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField layoutX="629.0" layoutY="33.0" prefHeight="40.0" prefWidth="312.0" promptText="Choose Room ID or Customer Name" style="-fx-background-radius: 15;">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </AnchorPane>
+                                       </top>
+                                       <right>
+                                          <AnchorPane prefHeight="605.0" prefWidth="244.0" style="-fx-background-color: #d0d3d4;" BorderPane.alignment="CENTER" />
+                                       </right>
+                                       <center>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <ScrollPane prefHeight="114.0" prefWidth="742.0" style="-fx-background-color: #7b7d7d;">
+                                                  <content>
+                                                    <AnchorPane />
+                                                  </content>
+                                                </ScrollPane>
+                                                <ScrollPane layoutY="114.0" prefHeight="491.0" prefWidth="742.0" style="-fx-background-color: #7b7d7d;">
+                                                   <content>
+                                                      <AnchorPane />
+                                                   </content>
+                                                </ScrollPane>
+                                             </children></AnchorPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="SettingUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;" visible="true">
+               <children>
+                  <Text fill="WHITE" fontSmoothingType="LCD" layoutX="12.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Line endX="873.199951171875" endY="7.62939453125E-6" layoutX="103.0" layoutY="68.0" startX="-100.0" />
+                  <Label layoutX="14.0" layoutY="80.0" text="Preference" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <RadioButton layoutX="55.0" layoutY="120.0" mnemonicParsing="false" text="Light Mode" textFill="WHITE" />
+                  <RadioButton layoutX="171.0" layoutY="120.0" mnemonicParsing="false" text="Dark Mode" textFill="WHITE" />
+                  <Line endX="873.199951171875" endY="7.62939453125E-6" layoutX="103.0" layoutY="152.0" startX="-100.0" />
+                  <Label layoutX="14.0" layoutY="164.0" text="Change Profile" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="ProfilePicture" fitHeight="131.0" fitWidth="124.0" layoutX="37.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/profile_3694471.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="155.0" layoutY="366.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: black;" text="+" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="11.0" layoutY="370.0" text="Change Profile Picture" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ChangeName" layoutX="312.0" layoutY="249.0" promptText="Change Name" style="-fx-background-color: white; -fx-background-radius: 10;" />
+                  <TextField fx:id="ChangePassword" layoutX="312.0" layoutY="301.0" promptText="Change Password" style="-fx-background-color: white; -fx-background-radius: 10;" />
+                  <Label layoutX="196.0" layoutY="252.0" text="Change Name     :" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="195.0" layoutY="304.0" text="Change Password:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Line endX="873.199951171875" endY="7.62939453125E-6" layoutX="107.0" layoutY="417.0" startX="-100.0" />
+                  <Label layoutX="14.0" layoutY="435.0" text="Current Version" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="55.0" layoutY="491.0" text="Version: 0.1 model beginning" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="358.0" layoutY="705.0" text="Developed by 11batch and 10batch " textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="56.0" layoutY="535.0" text="Name : Hotel_Management_System " textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="580.0" text="Developed Date:12.9.2024" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="421.0" layoutY="367.0" mnemonicParsing="false" onAction="#change_name_pass_Action" style="-fx-background-color: black;" text="Save" textFill="WHITE" />
+               </children></AnchorPane>
+            <AnchorPane fx:id="OrderUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;" visible="false">
+               <children>
+                  <BorderPane prefHeight="739.0" prefWidth="986.0">
+                     <top>
+                        <AnchorPane prefHeight="88.0" prefWidth="986.0" style="-fx-background-color: #283747;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button layoutY="30.0" mnemonicParsing="false" onAction="#CancleShowOrderTableAction" style="-fx-background-color: white;" text="&lt;-">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="BookingSearch" layoutX="748.0" layoutY="25.0" prefHeight="43.0" prefWidth="206.0" promptText="Search" style="-fx-background-radius: 10; -fx-background-color: white;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="903.0" layoutY="25.0" prefHeight="43.0" prefWidth="50.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="30.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icon/search_16765564.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="OrderDetailsTable" layoutY="1.0" prefHeight="649.0" prefWidth="986.0" visible="false">
+                                <columns>
+                                  <TableColumn fx:id="orderID" prefWidth="73.06669616699219" text="Booking Id" />
+                                  <TableColumn fx:id="firstNameColumn" prefWidth="121.33334350585938" text="First Name" />
+                                    <TableColumn fx:id="lastNameColumn" prefWidth="119.99996948242188" text="Last Name" />
+                                    <TableColumn fx:id="phoneColumn" prefWidth="114.933349609375" text="Phone Number" />
+                                    <TableColumn fx:id="bookingDateColumn" prefWidth="135.99993896484375" text="Booking Date" />
+                                    <TableColumn fx:id="arrivalDateColumn" prefWidth="120.800048828125" text="Arrival Date" />
+                                    <TableColumn fx:id="roomTypeColumn" prefWidth="120.0" text="Room Type" />
+                                    <TableColumn fx:id="takenRoomColumn" prefWidth="83.2000732421875" text="Taken Rooms" />
+                                    <TableColumn fx:id="depositColumn" prefWidth="95.199951171875" text="Deposit" />
+                                </columns>
+                              </TableView>
+                              <AnchorPane fx:id="BookingInputUI" layoutX="65.0" layoutY="36.0" prefHeight="578.0" prefWidth="427.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking Details Input">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Label layoutX="14.0" layoutY="91.0" text="First Name">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="232.0" layoutY="91.0" text="Last Name">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="167.0" text="Phone Number">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="243.0" text="Order Date">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="232.0" layoutY="243.0" text="Arrival Date">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="319.0" text="Room Type">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="232.0" layoutY="319.0" text="Number Taken Rooms">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="395.0" text="Deposit">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="OrderFirstName" layoutX="14.0" layoutY="126.0" prefHeight="27.0" prefWidth="124.0" promptText="First Name" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" />
+                                    <TextField fx:id="OrderLastName" layoutX="231.0" layoutY="126.0" prefHeight="27.0" prefWidth="124.0" promptText="Last Name" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" />
+                                    <TextField fx:id="OrderPhoneNumber" layoutX="14.0" layoutY="200.0" prefHeight="27.0" prefWidth="124.0" promptText="+959-........." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" />
+                                    <TextField fx:id="TakenRooms" alignment="CENTER" layoutX="266.0" layoutY="355.0" prefHeight="27.0" prefWidth="29.0" promptText="0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" />
+                                    <TextField fx:id="Deposit" layoutX="18.0" layoutY="427.0" prefHeight="27.0" prefWidth="124.0" promptText="0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" />
+                                    <DatePicker fx:id="OrderDate" layoutX="14.0" layoutY="276.0" prefHeight="26.0" prefWidth="124.0" promptText="Order Date" style="-fx-border-color: black; -fx-border-radius: 5;" />
+                                    <DatePicker fx:id="ArrivalDate" layoutX="231.0" layoutY="276.0" prefHeight="26.0" prefWidth="124.0" promptText="Arrival Date" style="-fx-border-color: black; -fx-border-radius: 5;" />
+                                    <ComboBox fx:id="roomOptions" layoutX="14.0" layoutY="356.0" prefHeight="27.0" prefWidth="150.0" promptText="Select Room" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" />
+                                    <Button fx:id="Decreasebtn" layoutX="219.0" layoutY="355.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: white; -fx-border-image-insets: white;" text="-" />
+                                    <Button fx:id="Increasebtn" layoutX="313.0" layoutY="355.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: white; -fx-border-color: white;" text="+" />
+                                    <Button layoutX="171.0" layoutY="526.0" mnemonicParsing="false" onAction="#BookingAction" prefWidth="60.0" style="-fx-background-color: yellow; -fx-border-color: yellow; -fx-background-radius: 7; -fx-border-radius: 7;" text="Book" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="StatusUI" layoutX="564.0" layoutY="37.0" prefHeight="575.0" prefWidth="386.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <children>
+                                    <Button layoutX="252.0" layoutY="533.0" mnemonicParsing="false" onAction="#ShowOrderTableAction" style="-fx-background-color: wheat; -fx-border-color: wheat;" text="Show Order Details" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Available Rooms-" />
+                                    <Text layoutX="171.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                    <Text layoutX="14.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Booking  Rooms-" />
+                                    <Text layoutX="171.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" />
+                                 </children></AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
