@@ -346,7 +346,7 @@
                   </TabPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="SettingUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;" visible="true">
+            <AnchorPane fx:id="SettingUI" prefHeight="739.0" prefWidth="986.0" style="-fx-background-color: #34495E;" visible="false">
                <children>
                   <Text fill="WHITE" fontSmoothingType="LCD" layoutX="12.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting">
                      <font>
