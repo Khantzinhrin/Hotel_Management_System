@@ -537,9 +537,36 @@ public class StaffPageController{
 	}
 	@FXML
 	void change_name_pass_Action(ActionEvent event) {
+	    String name = ChangeName.getText();
+	    String password = ChangePassword.getText();
+	    String updateQuery = "UPDATE admin_and_staff SET user_name = ?, user_password = ? WHERE user_id = ?";
 
+	    try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
+	         PreparedStatement pstmt = conn.prepareStatement(updateQuery)) {
+
+	      
+	        pstmt.setString(1, name);        // Update the new name
+	        pstmt.setString(2, password);    // Update the new password
+	        pstmt.setString(3, this.userId);      // Use the existing userId 
+	        int rowsAffected = pstmt.executeUpdate();
+
+	        if (rowsAffected > 0) {
+	            System.out.println("Name and password updated successfully!");
+	            clearField();
+	            setStaffDetails();
+	        } else {
+	            System.out.println("Failed to update name and password. User not found.");
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
 	}
 
+	private void clearField() {
+	   ChangeName.clear();
+	   ChangePassword.clear();
+	}
 
 	@FXML
 	void SearchAction(ActionEvent event) {
